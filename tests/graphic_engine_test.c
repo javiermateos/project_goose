@@ -8,12 +8,12 @@
  * @copyright GNU Public License
  */
 
+#include "graphic_engine_test.h"
+#include "graphic_engine.h"
+#include "test.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "graphic_engine.h"
-#include "graphic_engine_test.h"
-#include "test.h"
 
 #define MAX_TESTS 1 /*!<Numero maximo de test*/
 
@@ -26,7 +26,8 @@
  *      la prueba indicada
  *
  */
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
 
     int test = 0;
     int all = 1;
@@ -37,21 +38,22 @@ int main(int argc, char** argv) {
         test = atoi(argv[1]);
         all = 0;
         printf("Running test %d:\t", test);
-	if (test < 1 && test > MAX_TESTS) {
-	  printf("Error: unknown test %d\t", test);
-	  exit(EXIT_SUCCESS);
+        if (test < 1 && test > MAX_TESTS) {
+            printf("Error: unknown test %d\t", test);
+            exit(EXIT_SUCCESS);
         }
     }
 
-
-    if (all || test == 1) test1_graphic_engine_create();
+    if (all || test == 1)
+        test1_graphic_engine_create();
 
     PRINT_PASSED_PERCENTAGE;
 
     return 1;
 }
 
-void test1_graphic_engine_create() {
-  int result = graphic_engine_create()!=NULL ;
-  PRINT_TEST_RESULT(result);
+void test1_graphic_engine_create()
+{
+    int result = graphic_engine_create() != NULL;
+    PRINT_TEST_RESULT(result);
 }
