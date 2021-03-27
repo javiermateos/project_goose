@@ -27,5 +27,4 @@ foreach t: tests
     include_directories: incdir,
     c_args: build_args
   )
-  test(template[0].format(t), exe)
 endforeach
