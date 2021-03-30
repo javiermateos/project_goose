@@ -36,6 +36,4 @@ cd build
 ```sh
 # Generate documentation
 meson compile -C build docs
-# Tests
-meson test -C build
 ```
